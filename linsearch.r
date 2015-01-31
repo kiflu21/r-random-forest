@@ -36,7 +36,7 @@ cvRandomForest = function(trees) {
 }
 
 errors = vector()
-upperlimit = 400
+upperlimit = 500
 indexes = seq(2, upperlimit, 10)
 
 # Create a progress bar
