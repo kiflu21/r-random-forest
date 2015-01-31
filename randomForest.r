@@ -1,7 +1,7 @@
 library(randomForest)
 
 # Train the randomForest classifier for mtry distinct choices at each node and ntree trees
-model = randomForest(V1 ~. , data=lr, mtry=1, ntree=500)
+model = randomForest(V1 ~. , data=lr, mtry=1, ntree=50)
 
 layout(matrix(c(1,2),nrow=1), width=c(4,1)) 
 par(mar=c(5,4,4,0)) #No margin on the right side
