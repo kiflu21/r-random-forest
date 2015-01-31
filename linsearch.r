@@ -7,7 +7,7 @@ library(plyr)
 
 # Function to compute 5 fold cross validated randomForest
 cvRandomForest = function(trees) {
-  k = 2
+  k = 5
   n = floor(nrow(lr)/k)
   err.vec = vector()
   
