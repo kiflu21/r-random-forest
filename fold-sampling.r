@@ -38,7 +38,7 @@ pRandomForest = function(x) {
       prediction = predict(model, newdata = data.test[, -1])
 
       # Compute the error
-      err.vec[i] = count(data.test$V1 != prediction)[2,2]
+      err.vec[fold] = count(data.test$V1 != prediction)[2,2]
     }
 
     # Return the error

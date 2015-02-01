@@ -11,9 +11,9 @@ cvRandomForest = function(trees) {
   n = floor(nrow(lr)/k)
   err.vec = vector()
 
-  for (i in 1:k) {
-    s1 = ((i - 1) * n)
-    s2 = (i * n)
+  for (fold in 1:k) {
+    s1 = ((fold - 1) * n)
+    s2 = (fold * n)
     subset = s1:s2
 
     # Create training and test sets
@@ -21,14 +21,13 @@ cvRandomForest = function(trees) {
     data.train = lr[-subset, ]
 
     # Create a random forest model
-    set.seed(i * 143)
     model = randomForest(x = data.train[, -1], y = as.factor(data.train[, 1]), ntree=trees, mtry=1)
 
     # Predict for the test set using the generated model
     prediction = predict(model, newdata = data.test[, -1])
 
     # Compute the error
-    err.vec[i] = count(data.test$V1 != prediction)[2,2]
+    err.vec[fold] = count(data.test$V1 != prediction)[2,2]
   }
 
   # Return the error
