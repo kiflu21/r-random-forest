@@ -1,3 +1,6 @@
+setwd(".")
+lr <- read.csv("./lr.data", header=FALSE)
+
 library(randomForest)
 
 # Train the randomForest classifier for mtry distinct choices at each node and ntree trees
