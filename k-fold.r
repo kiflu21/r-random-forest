@@ -13,6 +13,10 @@ k = 5
 # Compute the 5-fold cross validation error
 errors = vector()
 indexes = seq(1, 10, 2)
+
+# Create a progress bar
+progress.bar <- create_progress_bar("text")
+progress.bar$init(length(indexes))
 for (m in indexes) {
     n = floor(nrow(lr)/k)
     err.vec = vector()
@@ -38,4 +42,6 @@ for (m in indexes) {
 
     # Return the error
     errors = c(errors, mean(err.vec))
+    
+    progress.bar$step()
 }
