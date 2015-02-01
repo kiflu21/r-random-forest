@@ -13,4 +13,3 @@ Report
 ------
 
 - Refer to *report.pdf* for details on the report submitted.
-
