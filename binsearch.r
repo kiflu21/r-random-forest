@@ -37,7 +37,7 @@ cvRandomForest = function(trees) {
 }
 
 # Run binary search
-threshold = 1.05
+threshold = 1.1
 low = 2
 high = 500
 minError = cvRandomForest(high)
