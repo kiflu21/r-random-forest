@@ -21,7 +21,7 @@ cvRandomForest = function(trees) {
     data.train = lr[-subset, ]
     
     # Create a random forest model
-    set.seed(i * 69)
+    set.seed(i * 143)
     model = randomForest(x = data.train[, -1], y = as.factor(data.train[, 1]), ntree=trees, mtry=1)
     
     # Predict for the test set using the generated model
