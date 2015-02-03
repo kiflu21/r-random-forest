@@ -8,3 +8,11 @@
 
 # .RData
 .RData
+
+# Whitelist items from results
+results/
+!bin-results.png
+!linear.jpg
+!m-plot.jpg
+!part4.jpg
+!results.md
